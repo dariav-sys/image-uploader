@@ -84,10 +84,30 @@ body {
   right: 0;
 }
 
-.crossed {
-  transition: transform 0.5s ease;
-  color: black;
-  text-decoration: line-through;
+/* animation */
+
+@keyframes linethrough {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
-
-
+.linethrough {
+  position: relative;
+}
+.linethrough::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: black;
+  animation-name: strike;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}

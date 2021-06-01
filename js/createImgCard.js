@@ -12,15 +12,10 @@ export function createImgCard(image, name) {
   deleteBtn.classList.add("delete-btn");
   deleteBtn.addEventListener("click", function () {
     removeImageFromLocalStorage(image);
-    // this.parentNode.parentNode.removeChild(this.parentNode);
-    p.classList.add("crossed")
-    setTimeout(
-      () => {
-
-        this.parentNode.parentNode.removeChild(this.parentNode)
-      },
-      1000
-    );
+    p.classList.add("linethrough");
+    setTimeout(() => {
+      this.parentNode.parentNode.removeChild(this.parentNode);
+    }, 2000);
   });
   let div = document.createElement("div");
   div.appendChild(img);
